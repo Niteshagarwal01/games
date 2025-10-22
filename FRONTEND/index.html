@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade Hub - Play Amazing Python Games</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="background-animation">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-gamepad"></i>
+                <span class="highlight">Arcade</span> Hub
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="#games"><i class="fas fa-fire"></i>Games</a></li>
+                <li><a href="#featured"><i class="fas fa-star"></i>Featured</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i>About</a></li>
+                <li><a href="developer.html"><i class="fas fa-code"></i>Developer</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <div class="title-container">
+            <h1 class="glitch" data-text="Python Game Hub">Python Game Hub</h1>
+            <p class="subtitle">Play awesome Python games directly in your browser!</p>
+            
+            <div class="header-animation">
+                <img src="game-assets/Aeroblasters/app.png" alt="Game Preview" class="floating-game">
+                <img src="game-assets/Car Racing 2d/app.png" alt="Game Preview" class="floating-game">
+                <img src="game-assets/GhostBusters/app.png" alt="Game Preview" class="floating-game">
+            </div>
+            
+            <div class="header-buttons">
+                <a href="#games" class="btn btn-primary"><i class="fas fa-gamepad"></i>Explore Games</a>
+                <a href="developer.html" class="btn btn-secondary"><i class="fas fa-code"></i>For Developers</a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="scroll-text">SCROLL DOWN</div>
+        </div>
+    </header>
+
+    <!-- Featured Games Section -->
+    <section class="featured-section" id="featured">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-trophy"></i> Featured Games</h2>
+            <div class="featured-games">
+                <div class="featured-game">
+                    <div class="featured-img">
+                        <img src="game-assets/Aeroblasters/app.png" alt="Aeroblasters">
+                        <div class="featured-overlay">
+                            <a href="#" class="play-now" data-game="aeroblasters">Play Now</a>
+                        </div>
+                    </div>
+                    <h3>Aeroblasters</h3>
+                    <div class="featured-tags">
+                        <span class="tag">Action</span>
+                        <span class="tag">Shooter</span>
+                        <span class="tag">Featured</span>
+                    </div>
+                </div>
+                <div class="featured-game">
+                    <div class="featured-img">
+                        <img src="game-assets/GhostBusters/app.png" alt="GhostBusters">
+                        <div class="featured-overlay">
+                            <a href="#" class="play-now" data-game="ghostbusters">Play Now</a>
+                        </div>
+                    </div>
+                    <h3>GhostBusters</h3>
+                    <div class="featured-tags">
+                        <span class="tag">Adventure</span>
+                        <span class="tag">Action</span>
+                        <span class="tag">Featured</span>
+                    </div>
+                </div>
+                <div class="featured-game">
+                    <div class="featured-img">
+                        <img src="game-assets/Car Racing 2d/app.png" alt="Car Racing 2D">
+                        <div class="featured-overlay">
+                            <a href="#" class="play-now" data-game="car-racing-2d">Play Now</a>
+                        </div>
+                    </div>
+                    <h3>Car Racing 2D</h3>
+                    <div class="featured-tags">
+                        <span class="tag">Racing</span>
+                        <span class="tag">Arcade</span>
+                        <span class="tag">Featured</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-gamepad"></i> All Games</h2>
+            
+            <div class="category-filter">
+                <button class="filter-btn active" data-filter="all">All Games</button>
+                <button class="filter-btn" data-filter="action">Action</button>
+                <button class="filter-btn" data-filter="arcade">Arcade</button>
+                <button class="filter-btn" data-filter="racing">Racing</button>
+                <button class="filter-btn" data-filter="puzzle">Puzzle</button>
+                <button class="filter-btn" data-filter="shooter">Shooter</button>
+            </div>
+            
+            <div class="game-grid" id="gamesList">
+                <!-- Games will be added here dynamically from games-data.js -->
+            </div>
+            
+            <div class="pagination">
+                <button class="nav-button" id="prevPage" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                <span id="page-indicator">Page 1 of 3</span>
+                <button class="nav-button" id="nextPage">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-chart-line"></i> Game Stats</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <i class="fas fa-gamepad"></i>
+                    <div class="stat-count" data-count="10">0</div>
+                    <div class="stat-label">Total Games</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-count" data-count="1500">0</div>
+                    <div class="stat-label">Players</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-star"></i>
+                    <div class="stat-count" data-count="4.8">0</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-code"></i>
+                    <div class="stat-count" data-count="3000">0</div>
+                    <div class="stat-label">Lines of Code</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter to get notified when new games are added!</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About</h3>
+                <p>Arcade Hub is a collection of Python games that can be played directly in your browser. All games are built using the Pygame library and compiled using Pygbag.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#games">Games</a></li>
+                    <li><a href="#featured">Featured Games</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="developer.html">Developer Info</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#" data-filter="action">Action Games</a></li>
+                    <li><a href="#" data-filter="arcade">Arcade Games</a></li>
+                    <li><a href="#" data-filter="racing">Racing Games</a></li>
+                    <li><a href="#" data-filter="puzzle">Puzzle Games</a></li>
+                    <li><a href="#" data-filter="shooter">Shooter Games</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> contact@arcadehub.com</li>
+                    <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Game Street, Pythonville</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Arcade Hub | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Game Details Modal -->
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="game-details">
+                <div class="game-header">
+                    <h2 id="modal-game-title">Game Title</h2>
+                    <div class="game-badges">
+                        <span class="badge badge-primary" id="modal-game-category">Category</span>
+                        <span class="badge badge-secondary">Python Game</span>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <div class="game-preview">
+                        <img id="modal-game-image" src="" alt="Game preview">
+                        <div class="game-stats">
+                            <div class="stat">
+                                <i class="fas fa-gamepad"></i>
+                                <span>Pygame</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-globe"></i>
+                                <span>Browser Play</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-desktop"></i>
+                                <span>Pygbag</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-description">
+                        <p id="modal-game-description">Game description will be loaded here.</p>
+                        <div class="game-features">
+                            <h3>Features</h3>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Play in your browser</li>
+                                <li><i class="fas fa-check-circle"></i> Built with Python & Pygame</li>
+                                <li><i class="fas fa-check-circle"></i> No installation required</li>
+                                <li><i class="fas fa-check-circle"></i> Smooth gameplay experience</li>
+                            </ul>
+                        </div>
+                        <div class="game-actions">
+                            <button id="play-game" class="play-button"><i class="fas fa-play"></i> Play Now</button>
+                            <button class="back-button close-modal"><i class="fas fa-arrow-left"></i> Back</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Player -->
+    <div id="gamePlayer" class="game-player hidden">
+        <div class="game-player-header">
+            <h3 id="player-game-title">Game Title</h3>
+            <button id="exit-game" class="exit-button"><i class="fas fa-times"></i> Exit Game</button>
+        </div>
+        <div class="game-iframe-container">
+            <iframe id="game-iframe" src="" frameborder="0" allow="autoplay"></iframe>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="games-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
